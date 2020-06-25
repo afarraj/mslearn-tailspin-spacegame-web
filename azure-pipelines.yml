@@ -2,7 +2,11 @@ trigger:
 - '*'
 
 pool:
+<<<<<<< HEAD
   vmImage: 'windows-latest'
+=======
+  vmImage: 'ubuntu-18.04'
+>>>>>>> 6993b723c09200bb2489651236b2da05d8188b50
   demands:
   - npm
 
@@ -54,9 +58,15 @@ steps:
     arguments: '--no-build --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
     zipAfterPublish: true
 
+<<<<<<< HEAD
 - task: WhiteSource Bolt@20
   displayName: 'Run WhiteSource Bolt'
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
   condition: succeeded()
+=======
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: drop'
+  condition: succeeded()
+>>>>>>> 6993b723c09200bb2489651236b2da05d8188b50
